@@ -2,9 +2,9 @@ import SignatureScentQuiz from '@/components/home/SignatureScentQuiz';
 import { seedProducts } from '@/lib/seedData';
 
 export const metadata = {
-  title: 'Find Your Signature Scent — Fragrance Finder Quiz | ELYRION',
+  title: 'Perfume Finder Quiz — Find Your Signature Scent in Pakistan | ELYRION',
   description:
-    'Take our 3-step olfactory diagnostic quiz to discover your ideal Extrait de Parfum signature matched with your mood and favorite notes.',
+    'Take our 1-minute quiz to discover your ideal long-lasting perfume based on your personal style, mood, and favorite notes. Tested for Pakistani weather.',
 };
 
 export default function QuizPage() {

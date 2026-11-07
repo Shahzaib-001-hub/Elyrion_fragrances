@@ -89,30 +89,30 @@ function ProductsCatalogContent() {
       
       {/* Page Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
-        <span className="text-xs uppercase tracking-[0.25em] text-elyrion-gold font-semibold">
-          The Extrait Collection
+        <span className="text-xs uppercase tracking-[0.25em] text-elyrion-goldDark font-extrabold">
+          The Extrait Collection • Pakistan
         </span>
-        <h1 className="font-serif text-3xl sm:text-5xl font-bold text-elyrion-cream">
+        <h1 className="font-serif text-3xl sm:text-5xl font-bold text-elyrion-dark">
           All Fragrances
         </h1>
         <p className="text-xs sm:text-sm text-elyrion-muted font-light leading-relaxed">
-          High-concentration Extrait de Parfum (35% Oil Concentration) formulated for unforgettable sillage, multifaceted notes, and extraordinary skin performance.
+          High-concentration Extrait de Parfum (35% pure perfume oils) formulated for 14+ hours of projection in Pakistani weather. Cash on Delivery available nationwide with a free 5ml tester in every box.
         </p>
       </div>
 
       {/* Filter Bar */}
-      <div className="p-6 rounded-2xl bg-elyrion-card border border-elyrion-border space-y-4">
+      <div className="p-6 rounded-3xl bg-white border border-[#E8E2D5] shadow-sm space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           
           {/* Gender Filter */}
           <div>
-            <label className="block text-[11px] uppercase tracking-wider font-semibold text-elyrion-gold mb-1.5">
+            <label className="block text-[11px] uppercase tracking-wider font-bold text-elyrion-goldDark mb-1.5">
               Category
             </label>
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full px-3 py-2 bg-elyrion-black border border-elyrion-border rounded-lg text-xs text-elyrion-cream focus:outline-none focus:border-elyrion-gold"
+              className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#E2DDD2] rounded-xl text-xs text-elyrion-dark font-medium focus:outline-none focus:ring-1 focus:ring-elyrion-gold"
             >
               <option value="ALL">All Categories</option>
               <option value="UNISEX">Unisex</option>
@@ -123,13 +123,13 @@ function ProductsCatalogContent() {
 
           {/* Note Family Filter */}
           <div>
-            <label className="block text-[11px] uppercase tracking-wider font-semibold text-elyrion-gold mb-1.5">
+            <label className="block text-[11px] uppercase tracking-wider font-bold text-elyrion-goldDark mb-1.5">
               Fragrance Note Family
             </label>
             <select
               value={selectedFamily}
               onChange={(e) => setSelectedFamily(e.target.value)}
-              className="w-full px-3 py-2 bg-elyrion-black border border-elyrion-border rounded-lg text-xs text-elyrion-cream focus:outline-none focus:border-elyrion-gold"
+              className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#E2DDD2] rounded-xl text-xs text-elyrion-dark font-medium focus:outline-none focus:ring-1 focus:ring-elyrion-gold"
             >
               <option value="ALL">All Note Families</option>
               <option value="Sweet & Dessert-Inspired">Sweet & Dessert-Inspired</option>
@@ -141,13 +141,13 @@ function ProductsCatalogContent() {
 
           {/* Mood Filter */}
           <div>
-            <label className="block text-[11px] uppercase tracking-wider font-semibold text-elyrion-gold mb-1.5">
+            <label className="block text-[11px] uppercase tracking-wider font-bold text-elyrion-goldDark mb-1.5">
               Mood & Persona
             </label>
             <select
               value={selectedMood}
               onChange={(e) => setSelectedMood(e.target.value)}
-              className="w-full px-3 py-2 bg-elyrion-black border border-elyrion-border rounded-lg text-xs text-elyrion-cream focus:outline-none focus:border-elyrion-gold"
+              className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#E2DDD2] rounded-xl text-xs text-elyrion-dark font-medium focus:outline-none focus:ring-1 focus:ring-elyrion-gold"
             >
               <option value="ALL">All Moods</option>
               <option value="Romantic">Romantic</option>
@@ -163,7 +163,7 @@ function ProductsCatalogContent() {
 
           {/* Search by Keyword */}
           <div>
-            <label className="block text-[11px] uppercase tracking-wider font-semibold text-elyrion-gold mb-1.5">
+            <label className="block text-[11px] uppercase tracking-wider font-bold text-elyrion-goldDark mb-1.5">
               Search by Note / Name
             </label>
             <input
@@ -171,18 +171,18 @@ function ProductsCatalogContent() {
               placeholder="e.g. Vanilla, Coffee, Oud..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-3 py-2 bg-elyrion-black border border-elyrion-border rounded-lg text-xs text-elyrion-cream focus:outline-none focus:border-elyrion-gold"
+              className="w-full px-3.5 py-2.5 bg-[#FAF8F5] border border-[#E2DDD2] rounded-xl text-xs text-elyrion-dark placeholder:text-elyrion-subtle font-medium focus:outline-none focus:ring-1 focus:ring-elyrion-gold"
             />
           </div>
 
         </div>
 
         {/* Results count & reset */}
-        <div className="pt-3 border-t border-elyrion-border flex items-center justify-between text-xs text-elyrion-muted">
+        <div className="pt-3 border-t border-[#EFECE4] flex items-center justify-between text-xs text-elyrion-muted">
           <span>Showing <strong>{filteredProducts.length}</strong> of {products.length} Fragrances</span>
           <button
             onClick={resetFilters}
-            className="text-elyrion-gold hover:underline flex items-center gap-1"
+            className="text-elyrion-goldDark font-bold hover:underline flex items-center gap-1"
           >
             <FontAwesomeIcon icon={faRotateLeft} className="text-[10px]" />
             <span>Reset All Filters</span>
@@ -192,11 +192,11 @@ function ProductsCatalogContent() {
 
       {/* Product Grid */}
       {filteredProducts.length === 0 ? (
-        <div className="text-center py-20 space-y-3 bg-elyrion-card/40 border border-elyrion-border rounded-2xl">
-          <p className="text-sm text-elyrion-muted">No fragrances matched your selected filters.</p>
+        <div className="text-center py-20 space-y-4 bg-white border border-[#E8E2D5] rounded-3xl shadow-sm">
+          <p className="text-sm text-elyrion-muted font-light">No fragrances matched your selected filters.</p>
           <button
             onClick={resetFilters}
-            className="px-6 py-2.5 bg-elyrion-gold text-elyrion-black text-xs font-semibold uppercase tracking-wider rounded-lg"
+            className="px-7 py-3.5 neu-gold-button text-elyrion-dark text-xs font-bold uppercase tracking-wider rounded-xl"
           >
             Clear Filters
           </button>

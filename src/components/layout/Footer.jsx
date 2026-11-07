@@ -60,7 +60,7 @@ export default function Footer() {
             </div>
             <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-elyrion-dark">35% Extrait Oil</h4>
-              <p className="text-[11px] text-elyrion-muted">Lasts 14+ hours on skin</p>
+              <p className="text-[11px] text-elyrion-muted">14+ hours lasting on clothes</p>
             </div>
           </div>
 
@@ -69,8 +69,8 @@ export default function Footer() {
               <FontAwesomeIcon icon={faSparkles} />
             </div>
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-elyrion-dark">Free Luxury Sample</h4>
-              <p className="text-[11px] text-elyrion-muted">Included in every order</p>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-elyrion-dark">Free 5ml Tester</h4>
+              <p className="text-[11px] text-elyrion-muted">Try first before opening</p>
             </div>
           </div>
 
@@ -79,8 +79,8 @@ export default function Footer() {
               <FontAwesomeIcon icon={faTruckFast} />
             </div>
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-elyrion-dark">Express Shipping</h4>
-              <p className="text-[11px] text-elyrion-muted">Insulated luxury packaging</p>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-elyrion-dark">Cash on Delivery</h4>
+              <p className="text-[11px] text-elyrion-muted">Fast delivery across Pakistan</p>
             </div>
           </div>
 
@@ -89,8 +89,8 @@ export default function Footer() {
               <FontAwesomeIcon icon={faShieldHalved} />
             </div>
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-elyrion-dark">100% Satisfaction</h4>
-              <p className="text-[11px] text-elyrion-muted">Pure artisanal formulas</p>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-elyrion-dark">7-Day Exchange</h4>
+              <p className="text-[11px] text-elyrion-muted">100% satisfaction guaranteed</p>
             </div>
           </div>
         </div>
@@ -106,11 +106,11 @@ export default function Footer() {
                 ELYRION
               </span>
               <span className="text-[9.5px] tracking-[0.3em] uppercase text-elyrion-goldDark font-semibold mt-0.5">
-                The Fragrance of Paradise
+                The Fragrance of Paradise • Pakistan
               </span>
             </div>
             <p className="text-xs leading-relaxed text-elyrion-muted max-w-sm font-light">
-              Artisanal French & Oriental perfumery crafted with high-concentration natural extracts. ELYRION transcends conventional scents to deliver memorable olfactory journeys.
+              Pakistan&apos;s premier artisanal fragrance house. Crafted with 35% pure French and Oriental perfume oils for unmatched projection and all-day performance in our climate.
             </p>
             <div className="flex items-center space-x-3 pt-2">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl neu-button flex items-center justify-center text-elyrion-dark hover:text-elyrion-gold transition-colors">
@@ -199,10 +199,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-elyrion-muted gap-4">
-          <p>© {new Date().getFullYear()} ELYRION Fragrances. All Rights Reserved. Crafted with Extrait Excellence.</p>
+          <p>© {new Date().getFullYear()} ELYRION Fragrances Pakistan. All Rights Reserved. Crafted with 35% Extrait Excellence.</p>
           <div className="flex items-center space-x-6 font-medium">
-            <Link href="/admin" className="text-elyrion-goldDark font-bold hover:underline">
-              Admin Portal
+            <Link href="/products" className="hover:text-elyrion-dark">
+              Delivery & COD Policy
             </Link>
             <Link href="/products" className="hover:text-elyrion-dark">
               Privacy Policy

@@ -15,6 +15,7 @@ import Footer from './Footer';
 import CartDrawer from './CartDrawer';
 import SearchModal from '@/components/ui/SearchModal';
 import QuickViewModal from '@/components/ui/QuickViewModal';
+import WhatsAppButton from './WhatsAppButton';
 
 export default function AppLayoutClient({ children }) {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -31,6 +32,7 @@ export default function AppLayoutClient({ children }) {
       <main className="flex-1">{children}</main>
 
       {!isAdminRoute && <Footer />}
+      {!isAdminRoute && <WhatsAppButton />}
 
       {/* Global Client Drawers & Modals */}
       <CartDrawer />

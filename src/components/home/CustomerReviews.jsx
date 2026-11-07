@@ -22,14 +22,14 @@ export default function CustomerReviews() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
-        <span className="text-xs uppercase tracking-[0.25em] text-elyrion-gold font-bold">
-          Social Proof & Experience
+        <span className="text-xs uppercase tracking-[0.25em] text-elyrion-goldDark font-extrabold">
+          Tested & Loved Across Pakistan
         </span>
-        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-elyrion-charcoal">
-          Connoisseurs in Paradise
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-elyrion-dark">
+          What Our Customers Say
         </h2>
         <p className="text-xs sm:text-sm text-elyrion-muted font-light leading-relaxed">
-          Read genuine impressions from fragrance enthusiasts who upgraded their signature collection to ELYRION.
+          Real reviews from fragrance lovers in Karachi, Lahore, Islamabad, and across Pakistan who wear ELYRION daily.
         </p>
       </div>
 
@@ -52,7 +52,7 @@ export default function CustomerReviews() {
 
               {/* Fragrance Reviewed Tag */}
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-elyrion-gold/10 text-elyrion-gold border border-elyrion-gold/30">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-elyrion-gold/10 text-elyrion-goldDark border border-elyrion-gold/30">
                   {rev.perfume}
                 </span>
                 <span className="text-[10px] text-elyrion-muted font-mono flex items-center gap-1">
@@ -62,21 +62,23 @@ export default function CustomerReviews() {
               </div>
 
               {/* Review Text */}
-              <p className="text-xs sm:text-sm text-elyrion-charcoal/90 leading-relaxed font-light italic">
-                "{rev.comment}"
+              <p className="text-xs sm:text-sm text-elyrion-dark leading-relaxed font-light italic">
+                &ldquo;{rev.comment}&rdquo;
               </p>
             </div>
 
             {/* Author Footer */}
-            <div className="pt-4 border-t border-elyrion-border/40 flex items-center justify-between text-xs">
+            <div className="pt-4 border-t border-[#E8E2D5] flex items-center justify-between text-xs">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-elyrion-gold/15 border border-elyrion-gold/40 flex items-center justify-center text-elyrion-gold font-serif font-bold text-xs shadow-inner">
+                <div className="w-8 h-8 rounded-full bg-elyrion-gold/15 border border-elyrion-gold/40 flex items-center justify-center text-elyrion-goldDark font-serif font-bold text-xs shadow-inner">
                   {rev.author.charAt(0)}
                 </div>
                 <div>
-                  <span className="font-semibold text-elyrion-charcoal block text-xs">{rev.author}</span>
+                  <span className="font-semibold text-elyrion-dark block text-xs">
+                    {rev.author} {rev.city && <span className="text-elyrion-muted font-normal">({rev.city})</span>}
+                  </span>
                   <span className="text-[10px] text-emerald-600 flex items-center gap-1 font-medium">
-                    <FontAwesomeIcon icon={faCircleCheck} className="text-[9px]" /> Verified Purchase
+                    <FontAwesomeIcon icon={faCircleCheck} className="text-[9px]" /> Verified Buyer
                   </span>
                 </div>
               </div>

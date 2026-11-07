@@ -40,21 +40,23 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const title = product.seo?.metaTitle || `${product.name} Extrait de Parfum | ELYRION Fragrances`;
+  const title = product.seo?.metaTitle || `${product.name} Extrait de Parfum | Long Lasting Perfumes Pakistan | ELYRION`;
   const description =
     product.seo?.metaDescription ||
-    product.tagline ||
-    `${product.name} by ELYRION. Artisanal 35% oil concentration extrait de parfum.`;
+    `${product.description || product.tagline} 35% pure oil concentration Extrait de Parfum with 14+ hours lasting. Free 5ml tester in every box. Cash on Delivery across Pakistan.`;
 
   return {
     title,
     description,
     keywords: product.seo?.keywords || [
       product.name,
-      'elyrion',
+      'elyrion perfumes pakistan',
+      'long lasting perfume pakistan',
+      'best perfumes in pakistan',
+      'cash on delivery perfume',
       product.category,
       product.noteFamily,
-      'luxury extrait',
+      '35% extrait de parfum',
     ],
     openGraph: {
       title,
@@ -119,26 +121,26 @@ export default async function ProductDetailPage({ params }) {
           <span>/</span>
           <Link href="/products" className="hover:text-elyrion-gold transition-colors">Fragrances</Link>
           <span>/</span>
-          <span className="text-elyrion-cream font-medium">{product.name}</span>
+          <span className="text-elyrion-dark font-medium">{product.name}</span>
         </nav>
 
         {/* Client Product Interactive Showcase */}
         <ProductDetailClient product={product} />
 
         {/* Related Fragrance Recommendations */}
-        <div className="pt-12 border-t border-elyrion-border space-y-8">
+        <div className="pt-12 border-t border-[#E8E2D5] space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <span className="text-xs uppercase tracking-widest text-elyrion-gold font-semibold">
-                Olfactory Harmony
+              <span className="text-xs uppercase tracking-widest text-elyrion-goldDark font-extrabold">
+                Recommended For You
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-elyrion-cream">
-                You May Also Crave
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-elyrion-dark">
+                You May Also Love
               </h3>
             </div>
             <Link
               href="/products"
-              className="text-xs text-elyrion-gold uppercase tracking-wider hover:underline font-semibold"
+              className="text-xs text-elyrion-goldDark uppercase tracking-wider hover:underline font-bold"
             >
               Explore Full Collection →
             </Link>
@@ -149,9 +151,9 @@ export default async function ProductDetailPage({ params }) {
               <Link
                 key={rel.slug}
                 href={`/products/${rel.slug}`}
-                className="group p-4 bg-elyrion-card border border-elyrion-border hover:border-elyrion-gold/40 rounded-2xl flex flex-col justify-between transition-all hover:shadow-gold-sm"
+                className="group p-4 bg-white border border-[#E8E2D5] hover:border-elyrion-gold/40 rounded-2xl flex flex-col justify-between transition-all hover:shadow-lg"
               >
-                <div className="aspect-[4/5] rounded-xl overflow-hidden mb-3 bg-elyrion-black">
+                <div className="aspect-[4/5] rounded-xl overflow-hidden mb-3 bg-[#FAF8F5]">
                   <img
                     src={rel.images?.studio}
                     alt={rel.name}
@@ -159,14 +161,14 @@ export default async function ProductDetailPage({ params }) {
                   />
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase font-bold text-elyrion-gold tracking-widest">
+                  <span className="text-[10px] uppercase font-bold text-elyrion-goldDark tracking-widest">
                     {rel.category}
                   </span>
-                  <h4 className="font-serif text-base font-bold text-elyrion-cream group-hover:text-elyrion-gold transition-colors">
+                  <h4 className="font-serif text-base font-bold text-elyrion-dark group-hover:text-elyrion-goldDark transition-colors">
                     {rel.name}
                   </h4>
-                  <p className="text-xs text-elyrion-muted line-clamp-1 italic mt-0.5">
-                    "{rel.tagline}"
+                  <p className="text-xs text-elyrion-muted line-clamp-1 italic mt-0.5 font-light">
+                    &ldquo;{rel.tagline}&rdquo;
                   </p>
                 </div>
               </Link>

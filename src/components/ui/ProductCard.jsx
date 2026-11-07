@@ -51,7 +51,7 @@ export default function ProductCard({ product, onQuickView }) {
       className="group relative neu-flat-hover rounded-2xl overflow-hidden flex flex-col justify-between"
     >
       {/* Visual Container with Dual-Photo Switch */}
-      <div className="relative w-full aspect-[4/5] overflow-hidden bg-[#EAE5DB]">
+      <div className="relative w-full aspect-[4/5] overflow-hidden bg-[#F5F2EC]">
         {/* Studio Bottle Shot */}
         <img
           src={studioImage}
@@ -143,12 +143,12 @@ export default function ProductCard({ product, onQuickView }) {
       </div>
 
       {/* Card Information Body */}
-      <div className="p-5 flex-1 flex flex-col justify-between space-y-3 bg-[#F2EFE8]">
+      <div className="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
         <div>
           {/* Note Family & Star Rating */}
           <div className="flex items-center justify-between text-[11px] text-elyrion-muted mb-1 font-semibold">
             <span className="text-elyrion-goldDark uppercase tracking-widest font-bold text-[9.5px]">
-              {product.noteFamily || 'Extrait de Parfum'}
+              {product.noteFamily || 'Extrait de Parfum (35% Oil)'}
             </span>
             <div className="flex items-center gap-1 text-amber-500">
               <FontAwesomeIcon icon={faStar} className="text-[10px]" />

@@ -141,11 +141,11 @@ export default function ProductDetailClient({ product }) {
         </div>
 
         {/* Pricing & Bottle Specs */}
-        <div className="p-4 bg-elyrion-card border border-elyrion-border rounded-2xl flex items-center justify-between">
+        <div className="p-5 bg-white border border-[#E8E2D5] rounded-3xl shadow-sm flex items-center justify-between">
           <div className="space-y-0.5">
-            <span className="text-[10px] uppercase tracking-wider text-elyrion-muted">Price (Extrait de Parfum)</span>
+            <span className="text-[10px] uppercase tracking-wider text-elyrion-muted font-bold">Price (Extrait de Parfum)</span>
             <div className="flex items-baseline gap-3">
-              <span className="font-serif text-2xl sm:text-3xl font-bold text-elyrion-gold">
+              <span className="font-serif text-2xl sm:text-3xl font-bold text-elyrion-goldDark">
                 {formatPrice(product.salePrice || product.price)}
               </span>
               {product.salePrice && product.salePrice < product.price && (
@@ -154,7 +154,7 @@ export default function ProductDetailClient({ product }) {
                 </span>
               )}
               {discount > 0 && (
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500 text-black">
+                <span className="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-600 text-white">
                   SAVE {discount}%
                 </span>
               )}
@@ -162,8 +162,8 @@ export default function ProductDetailClient({ product }) {
           </div>
 
           <div className="text-right text-xs text-elyrion-muted space-y-1">
-            <span className="block font-mono text-elyrion-cream font-bold">{product.size || '50ml / 1.7 fl. oz.'}</span>
-            <span className="block text-[10px] text-emerald-400 font-semibold">In Stock • Ships in 24h</span>
+            <span className="block font-mono text-elyrion-dark font-bold">{product.size || '50ml Extrait'}</span>
+            <span className="block text-[10px] text-emerald-700 font-bold">In Stock • Fast Dispatch</span>
           </div>
         </div>
 
@@ -177,20 +177,22 @@ export default function ProductDetailClient({ product }) {
         <OlfactoryPyramid notes={product.notes} />
 
         {/* Quantity and Add to Bag Bar */}
-        <div className="space-y-3 pt-2">
+        <div className="space-y-4 pt-2">
           <div className="flex gap-3">
             {/* Quantity Selector */}
-            <div className="flex items-center border border-elyrion-border rounded-xl bg-elyrion-card px-3">
+            <div className="flex items-center border border-[#E2DDD2] rounded-2xl bg-white px-3 shadow-sm">
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="px-2 py-2 text-sm text-elyrion-muted hover:text-elyrion-gold"
+                className="px-2.5 py-2 text-sm text-elyrion-muted hover:text-elyrion-dark font-bold"
+                aria-label="Decrease quantity"
               >
                 -
               </button>
-              <span className="px-3 text-sm font-bold text-elyrion-cream">{quantity}</span>
+              <span className="px-3 text-sm font-bold text-elyrion-dark">{quantity}</span>
               <button
                 onClick={() => setQuantity(quantity + 1)}
-                className="px-2 py-2 text-sm text-elyrion-muted hover:text-elyrion-gold"
+                className="px-2.5 py-2 text-sm text-elyrion-muted hover:text-elyrion-dark font-bold"
+                aria-label="Increase quantity"
               >
                 +
               </button>
@@ -200,23 +202,30 @@ export default function ProductDetailClient({ product }) {
             <button
               onClick={handleAddToCart}
               disabled={added}
-              className="flex-1 py-4 bg-gold-gradient text-elyrion-black font-bold text-xs sm:text-sm uppercase tracking-widest rounded-xl hover:shadow-gold-md hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
+              className="flex-1 py-4 neu-gold-button text-elyrion-dark font-bold text-xs sm:text-sm uppercase tracking-widest rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md"
             >
               <FontAwesomeIcon icon={added ? faCheck : faBagShopping} />
               <span>{added ? 'Added to Fragrance Bag!' : `Add to Bag • ${formatPrice((product.salePrice || product.price) * quantity)}`}</span>
             </button>
           </div>
 
-          {/* Complimentary Perks Reminder */}
-          <div className="flex items-center justify-between text-[11px] text-elyrion-muted px-2 pt-1">
-            <span className="flex items-center gap-1 text-elyrion-gold">
-              <FontAwesomeIcon icon={faGift} className="text-[10px]" />
-              Includes Free 5ml Luxury Sample
-            </span>
-            <span className="flex items-center gap-1">
-              <FontAwesomeIcon icon={faTruckFast} className="text-[10px]" />
-              Free Express Delivery above Rs. 3,500
-            </span>
+          {/* Pakistan Trust Perks Grid */}
+          <div className="grid grid-cols-3 gap-2 text-center text-[11px] text-elyrion-muted pt-2 border-t border-[#E8E2D5]">
+            <div className="flex flex-col items-center gap-1 p-2.5 bg-white rounded-2xl border border-[#EFECE4] shadow-sm">
+              <FontAwesomeIcon icon={faBottleDroplet} className="text-elyrion-goldDark text-xs" />
+              <span className="font-bold text-elyrion-dark text-xs">14+ Hours Lasting</span>
+              <span className="text-[9.5px]">35% Pure Extrait Oil</span>
+            </div>
+            <div className="flex flex-col items-center gap-1 p-2.5 bg-white rounded-2xl border border-[#EFECE4] shadow-sm">
+              <FontAwesomeIcon icon={faGift} className="text-elyrion-goldDark text-xs" />
+              <span className="font-bold text-elyrion-dark text-xs">Free 5ml Tester</span>
+              <span className="text-[9.5px]">Test before opening</span>
+            </div>
+            <div className="flex flex-col items-center gap-1 p-2.5 bg-white rounded-2xl border border-[#EFECE4] shadow-sm">
+              <FontAwesomeIcon icon={faTruckFast} className="text-elyrion-goldDark text-xs" />
+              <span className="font-bold text-elyrion-dark text-xs">Cash on Delivery</span>
+              <span className="text-[9.5px]">Across all Pakistan</span>
+            </div>
           </div>
         </div>
 

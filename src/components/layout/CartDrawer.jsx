@@ -117,10 +117,10 @@ export default function CartDrawer() {
       />
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[#F5F2EB] border-l border-[#E2DDD2] shadow-neu-lg flex flex-col justify-between text-elyrion-dark">
+        <div className="w-screen max-w-md bg-[#FAF8F5] border-l border-[#E2DDD2] shadow-2xl flex flex-col justify-between text-elyrion-dark">
           
           {/* Header */}
-          <div className="p-6 border-b border-[#E2DDD2] flex items-center justify-between bg-[#EFECE4]">
+          <div className="p-6 border-b border-[#E2DDD2] flex items-center justify-between bg-white">
             <div className="flex items-center space-x-2">
               <span className="font-serif text-lg tracking-wider font-bold text-elyrion-dark">
                 Your Fragrance Bag
@@ -436,23 +436,23 @@ export default function CartDrawer() {
 
           {/* Footer / Summary Action */}
           {!orderSuccess && cart.length > 0 && !isCheckingOut && (
-            <div className="p-6 bg-[#EFECE4] border-t border-[#E2DDD2] space-y-3">
+            <div className="p-6 bg-white border-t border-[#E8E2D5] space-y-3 shadow-sm">
               <div className="space-y-1.5 text-xs text-elyrion-muted">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
                   <span className="text-elyrion-dark font-bold">{formatPrice(subtotal)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Express Shipping</span>
+                  <span>Express Delivery (Pakistan)</span>
                   <span>
                     {shippingFee === 0 ? (
-                      <span className="text-emerald-600 font-bold uppercase text-[10px]">Free</span>
+                      <span className="text-emerald-700 font-bold uppercase text-[10px]">Free Express Delivery</span>
                     ) : (
                       formatPrice(shippingFee)
                     )}
                   </span>
                 </div>
-                <div className="flex justify-between text-sm font-bold text-elyrion-dark pt-2 border-t border-[#DDD6C8]">
+                <div className="flex justify-between text-sm font-bold text-elyrion-dark pt-2 border-t border-[#EFECE4]">
                   <span>Estimated Total</span>
                   <span className="text-elyrion-goldDark text-base font-serif">{formatPrice(totalAmount)}</span>
                 </div>
@@ -460,11 +460,15 @@ export default function CartDrawer() {
 
               <button
                 onClick={() => setIsCheckingOut(true)}
-                className="w-full py-4 neu-gold-button font-bold text-xs uppercase tracking-widest rounded-xl flex items-center justify-center gap-2"
+                className="w-full py-4 neu-gold-button font-bold text-xs uppercase tracking-widest rounded-2xl flex items-center justify-center gap-2 shadow-md"
               >
                 <span>Proceed to Checkout</span>
                 <FontAwesomeIcon icon={faArrowRight} />
               </button>
+
+              <p className="text-[10.5px] text-center text-elyrion-muted font-medium pt-1">
+                💵 Cash on Delivery (COD) Available Nationwide Across Pakistan
+              </p>
             </div>
           )}
 

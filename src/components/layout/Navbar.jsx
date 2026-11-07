@@ -18,8 +18,6 @@ import {
   faBars,
   faXmark,
   faWandMagicSparkles as faSparkles,
-  faCrown,
-  faShieldHalved,
 } from '@fortawesome/free-solid-svg-icons';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
@@ -59,8 +57,8 @@ export default function Navbar({ onOpenSearch }) {
     <header
       className={`sticky top-0 z-40 w-full transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#F5F2EB]/95 backdrop-blur-md shadow-neu-sm border-b border-[#E2DDD2]'
-          : 'bg-[#F5F2EB]/90 backdrop-blur-sm border-b border-[#E8E3D8]'
+          ? 'bg-[#FAF8F5]/95 backdrop-blur-md shadow-sm border-b border-[#E8E2D5]'
+          : 'bg-[#FAF8F5]/90 backdrop-blur-sm border-b border-[#EFECE4]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -142,15 +140,7 @@ export default function Navbar({ onOpenSearch }) {
               )}
             </Link>
 
-            {/* Admin Portal Shortcut */}
-            <Link
-              href="/admin"
-              className="px-3 py-2 rounded-xl neu-button text-elyrion-muted hover:text-elyrion-gold text-xs flex items-center gap-1.5 transition-all"
-              title="Admin Portal"
-            >
-              <FontAwesomeIcon icon={faShieldHalved} className="text-elyrion-gold text-xs" />
-              <span className="hidden md:inline uppercase text-[9.5px] tracking-wider font-bold text-elyrion-dark">Admin</span>
-            </Link>
+
 
             {/* Neumorphic Shopping Bag Button */}
             <button
@@ -170,7 +160,7 @@ export default function Navbar({ onOpenSearch }) {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#F5F2EB] border-b border-[#E2DDD2] px-6 py-6 space-y-3 shadow-neu-md animate-in fade-in duration-200">
+        <div className="lg:hidden bg-[#FAF8F5] border-b border-[#E8E2D5] px-6 py-6 space-y-3 shadow-xl animate-in fade-in duration-200">
           <div className="flex flex-col space-y-2">
             {[...leftNavLinks, ...rightNavLinks].map((link) => (
               <Link
@@ -183,14 +173,7 @@ export default function Navbar({ onOpenSearch }) {
                 <span className="text-elyrion-gold text-xs">→</span>
               </Link>
             ))}
-            <Link
-              href="/admin"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-xs uppercase tracking-widest text-elyrion-gold font-bold py-3 px-3 rounded-xl neu-pressed flex items-center gap-2 mt-2"
-            >
-              <FontAwesomeIcon icon={faCrown} />
-              <span>Admin Management Portal</span>
-            </Link>
+
           </div>
         </div>
       )}

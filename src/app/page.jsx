@@ -1,4 +1,5 @@
 import HeroBannerSlider from '@/components/home/HeroBannerSlider';
+import TrustPerksBanner from '@/components/home/TrustPerksBanner';
 import BestSellersSection from '@/components/home/BestSellersSection';
 import ShopByGender from '@/components/home/ShopByGender';
 import ShopByNotes from '@/components/home/ShopByNotes';
@@ -11,7 +12,7 @@ import CustomerReviews from '@/components/home/CustomerReviews';
 import InstagramFeed from '@/components/home/InstagramFeed';
 import NewsletterVIP from '@/components/home/NewsletterVIP';
 import { seedProducts } from '@/lib/seedData';
-import { generateOrganizationJsonLd } from '@/lib/seo';
+import { generateOrganizationJsonLd, generateFaqJsonLd } from '@/lib/seo';
 
 // Helper function to fetch products server-side or fallback to rich seed data
 async function getProducts() {
@@ -29,6 +30,7 @@ async function getProducts() {
 export default async function HomePage() {
   const products = await getProducts();
   const organizationSchema = generateOrganizationJsonLd();
+  const faqSchema = generateFaqJsonLd();
 
   // Pick trending product for Scent of the Week
   const featuredProduct = products.find((p) => p.slug === 'cafe-de-nuit') || products[0];
@@ -40,9 +42,17 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
+      {/* Inject Pakistan FAQ Structured Data Schema for Rich Google Search Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       {/* 1. Hero Banner System (Banners 01, 02, 03) */}
       <HeroBannerSlider />
+
+      {/* High-Trust Pakistan Perks Banner (COD, 14+ Hours Lasting, Free 5ml Sample) */}
+      <TrustPerksBanner />
 
       {/* 2. Best Sellers Section */}
       <BestSellersSection products={products} />

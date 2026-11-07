@@ -30,14 +30,14 @@ export default function BestSellersSection({ products = [], onQuickView }) {
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-elyrion-gold animate-ping" />
             <span className="text-xs uppercase tracking-[0.2em] text-elyrion-goldDark font-extrabold">
-              Trusted by Fragrance Connoisseurs
+              Most Loved in Pakistan
             </span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-elyrion-dark">
-            Best Sellers
+            Customer Best Sellers
           </h2>
           <p className="text-xs sm:text-sm text-elyrion-muted max-w-xl leading-relaxed font-light">
-            Our most sought-after Extrait de Parfum creations. Formulated with 35% pure perfume oil concentration for unprecedented sillage.
+            Pakistan&apos;s most sought-after Extrait de Parfum perfumes. Formulated with 35% pure perfume oils for deep projection and guaranteed 14+ hours lasting on your clothes.
           </p>
         </div>
 

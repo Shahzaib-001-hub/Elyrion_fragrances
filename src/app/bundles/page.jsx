@@ -2,9 +2,9 @@ import OffersBundlesSection from '@/components/home/OffersBundlesSection';
 import { seedProducts } from '@/lib/seedData';
 
 export const metadata = {
-  title: 'Curated Perfume Bundles & His & Hers Sets | ELYRION',
+  title: 'Luxury Perfume Bundles & Gift Sets in Pakistan | ELYRION',
   description:
-    'Explore curated luxury extrait bundles. Enjoy up to 30% savings with our Best Seller Duo, His & Hers sets, and custom bundle builder.',
+    'Save up to 30% on curated luxury perfume bundles and His & Hers sets in Pakistan. Nationwide Cash on Delivery (COD), free delivery, and free 5ml tester with every bundle.',
 };
 
 export default function BundlesPage() {

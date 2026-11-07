@@ -19,23 +19,28 @@ import {
 const announcements = [
   {
     icon: faTruckFast,
-    text: 'COMPLIMENTARY EXPRESS SHIPPING ON ALL ORDERS ABOVE RS. 3,500',
-    highlight: 'LIMITED TIME',
-  },
-  {
-    icon: faGift,
-    text: 'BUY 2 PERFUMES & RECEIVE THE 3RD FREE — AUTOMATIC AT CHECKOUT',
-    highlight: 'PARADISE OFFER',
+    text: 'FREE EXPRESS SHIPPING ACROSS PAKISTAN ON ORDERS ABOVE RS. 3,500',
+    highlight: 'DELIVERY NATIONWIDE',
   },
   {
     icon: faCrown,
-    text: 'FREE 5ML LUXURY EXTRAIT SAMPLE WITH EVERY FULL BOTTLE ORDER',
-    highlight: 'VIP PERK',
+    text: 'CASH ON DELIVERY (COD) AVAILABLE IN ALL CITIES ACROSS PAKISTAN',
+    highlight: 'PAY AT DOORSTEP',
+  },
+  {
+    icon: faGift,
+    text: 'TRY RISK-FREE: COMPLIMENTARY 5ML TESTER INCLUDED IN EVERY ORDER',
+    highlight: 'FREE TESTER',
   },
   {
     icon: faSparkles,
-    text: 'HIGH CONCENTRATION EXTRAIT DE PARFUM (35% OIL) — 14+ HOUR LONGEVITY',
-    highlight: 'ARTISANAL LUXURY',
+    text: 'CRAFTED FOR PAKISTANI WEATHER — 35% EXTRAIT OIL WITH 14+ HOURS LASTING',
+    highlight: 'EXTRAIT DE PARFUM',
+  },
+  {
+    icon: faGift,
+    text: 'BUY 2 PERFUMES & RECEIVE THE 3RD FREE — APPLIED AUTOMATICALLY',
+    highlight: 'LIMITED BUNDLE OFFER',
   },
 ];
 
@@ -52,9 +57,9 @@ export default function AnnouncementBar() {
   const current = announcements[index];
 
   return (
-    <div className="bg-[#ECE7DC] border-b border-[#DDD7C8] text-elyrion-dark py-2 px-4 text-xs tracking-wider transition-all duration-500 overflow-hidden relative shadow-inner">
+    <div className="bg-[#F3EFE6] border-b border-[#E8E2D5] text-elyrion-dark py-2.5 px-4 text-xs tracking-wider transition-all duration-500 overflow-hidden relative">
       <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 sm:gap-3 text-center">
-        <span className="inline-block px-2.5 py-0.5 rounded-full text-[9.5px] font-extrabold bg-[#F8F5EE] text-elyrion-goldDark uppercase tracking-widest border border-elyrion-gold/30 shadow-sm">
+        <span className="inline-block px-2.5 py-0.5 rounded-full text-[9.5px] font-extrabold bg-white text-elyrion-goldDark uppercase tracking-widest border border-elyrion-gold/40 shadow-sm">
           {current.highlight}
         </span>
         <div className="flex items-center gap-2">

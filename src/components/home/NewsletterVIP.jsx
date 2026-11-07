@@ -32,25 +32,25 @@ export default function NewsletterVIP() {
         </div>
 
         <div className="space-y-2 max-w-xl mx-auto">
-          <span className="text-xs uppercase tracking-[0.25em] text-elyrion-gold font-bold">
-            Private Olfactory Circle
+          <span className="text-xs uppercase tracking-[0.25em] text-elyrion-goldDark font-extrabold">
+            Join the ELYRION Club
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-elyrion-charcoal">
-            Unlock 10% Off Your First Order
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-elyrion-dark">
+            Get 10% Off Your First Order
           </h2>
           <p className="text-xs sm:text-sm text-elyrion-muted font-light leading-relaxed">
-            Subscribe to receive private invitations to limited-batch extrait drops, complimentary discovery samples, and seasonal masterclasses.
+            Subscribe to receive private discount codes, early access to new perfume drops, and exclusive bundle promotions.
           </p>
         </div>
 
         {submitted ? (
-          <div className="p-5 max-w-md mx-auto bg-emerald-500/10 border border-emerald-500/30 text-elyrion-charcoal rounded-2xl space-y-2 animate-in zoom-in-95 duration-300">
+          <div className="p-5 max-w-md mx-auto bg-emerald-500/10 border border-emerald-500/30 text-elyrion-dark rounded-2xl space-y-2 animate-in zoom-in-95 duration-300">
             <div className="flex items-center justify-center gap-2 text-emerald-700 text-base font-bold">
               <FontAwesomeIcon icon={faCheck} />
-              <span>Welcome to The Paradise Vault!</span>
+              <span>Welcome to ELYRION!</span>
             </div>
-            <p className="text-xs text-elyrion-charcoal/90 font-light">
-              Your 10% voucher code is: <strong className="text-elyrion-gold font-mono text-sm">PARADISE10</strong>
+            <p className="text-xs text-elyrion-dark font-light">
+              Use code at checkout for 10% off: <strong className="text-elyrion-goldDark font-mono text-sm font-bold">PARADISE10</strong>
             </p>
           </div>
         ) : (
@@ -60,26 +60,28 @@ export default function NewsletterVIP() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your private email"
-              className="flex-1 px-5 py-4 neu-pressed rounded-xl text-xs sm:text-sm text-elyrion-charcoal placeholder:text-elyrion-muted focus:outline-none focus:border-elyrion-gold"
+              placeholder="Enter your email address"
+              className="flex-1 px-5 py-4 neu-pressed rounded-xl text-xs sm:text-sm text-elyrion-dark placeholder:text-elyrion-muted focus:outline-none focus:border-elyrion-gold"
             />
             <button
               type="submit"
-              className="px-8 py-4 neu-gold-button text-white font-bold text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
+              className="px-8 py-4 neu-gold-button text-elyrion-dark font-bold text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
             >
-              <span>Join Circle</span>
+              <span>Get 10% Off</span>
               <FontAwesomeIcon icon={faArrowRight} className="text-xs" />
             </button>
           </form>
         )}
 
-        <div className="pt-2 flex items-center justify-center gap-6 text-[11px] text-elyrion-muted">
+        <div className="pt-2 flex items-center justify-center gap-4 sm:gap-6 text-[11px] text-elyrion-muted flex-wrap">
           <span className="flex items-center gap-1.5">
             <FontAwesomeIcon icon={faGift} className="text-elyrion-gold text-[10px]" />
-            Free 5ml Sample Included
+            Free 5ml Tester Included
           </span>
           <span>•</span>
-          <span>No Spam, Only Luxury</span>
+          <span>Cash on Delivery Nationwide</span>
+          <span>•</span>
+          <span>No Spam Ever</span>
         </div>
 
       </div>
