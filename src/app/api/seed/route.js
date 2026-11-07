@@ -1,11 +1,11 @@
 /**
  * ============================================================================
  * ELYRION — The Fragrance of Paradise
- * Database Seeder API Route (/api/seed)
+ * Database Catalog Sync API Route (/api/seed)
  * ============================================================================
  * 
- * Populates MongoDB Atlas with initial high-fashion perfumes, note families,
- * bundles, and an initial superadmin account for instant deployment.
+ * Populates MongoDB Atlas with official luxury perfume catalog, note families,
+ * bundles, and initial superadmin account. Does NOT insert mock orders.
  */
 
 import { NextResponse } from 'next/server';
@@ -16,39 +16,39 @@ import Bundle from '@/models/Bundle';
 import Mood from '@/models/Mood';
 import User from '@/models/User';
 import {
-  seedProducts,
-  seedCategories,
-  seedBundles,
-  seedMoods,
-} from '@/lib/seedData';
+  products as catalogProducts,
+  categories as catalogCategories,
+  bundles as catalogBundles,
+  moods as catalogMoods,
+} from '@/lib/catalog';
 
 export async function POST(req) {
   try {
     await connectDB();
 
-    // 1. Seed Categories & Note Families
+    // 1. Sync Categories & Note Families
     await Category.deleteMany({});
-    await Category.insertMany(seedCategories);
+    await Category.insertMany(catalogCategories);
 
-    // 2. Seed Moods
+    // 2. Sync Moods
     await Mood.deleteMany({});
-    await Mood.insertMany(seedMoods);
+    await Mood.insertMany(catalogMoods);
 
-    // 3. Seed Bundles
+    // 3. Sync Bundles
     await Bundle.deleteMany({});
-    await Bundle.insertMany(seedBundles);
+    await Bundle.insertMany(catalogBundles);
 
-    // 4. Seed Products
+    // 4. Sync Products
     await Product.deleteMany({});
-    const insertedProducts = await Product.insertMany(seedProducts);
+    const insertedProducts = await Product.insertMany(catalogProducts);
 
-    // 5. Seed Admin User
+    // 5. Ensure Superadmin
     const existingAdmin = await User.findOne({ email: 'admin@elyrionfragrances.com' });
     if (!existingAdmin) {
       await User.create({
         name: 'Shahzaib — Creative Director',
         email: 'admin@elyrionfragrances.com',
-        password: 'elyrion_admin_2026', // In production, hash with bcrypt
+        password: 'elyrion_admin_2026',
         role: 'superadmin',
         isActive: true,
       });
@@ -56,13 +56,13 @@ export async function POST(req) {
 
     return NextResponse.json({
       success: true,
-      message: '✨ ELYRION Database successfully seeded with luxury catalog and admin account.',
+      message: 'ELYRION official catalog and admin account successfully synchronized with MongoDB Atlas.',
       productsCount: insertedProducts.length,
-      categoriesCount: seedCategories.length,
-      bundlesCount: seedBundles.length,
+      categoriesCount: catalogCategories.length,
+      bundlesCount: catalogBundles.length,
     });
   } catch (error) {
-    console.error('Seed API Error:', error);
+    console.error('Catalog Sync Error:', error);
     return NextResponse.json(
       {
         success: false,
@@ -75,7 +75,6 @@ export async function POST(req) {
 
 export async function GET() {
   return NextResponse.json({
-    message: 'Send a POST request to /api/seed to initialize or reset ELYRION database with seed data.',
+    message: 'Send a POST request to /api/seed to sync official catalog with MongoDB Atlas.',
   });
 }
-

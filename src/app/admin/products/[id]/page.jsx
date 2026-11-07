@@ -14,7 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faWandMagicSparkles as faSparkles } from '@fortawesome/free-solid-svg-icons';
 import AdminHeader from '@/components/admin/AdminHeader';
 import ProductForm from '@/components/admin/ProductForm';
-import { seedProducts } from '@/lib/seedData';
+import { products as catalogProducts } from '@/lib/catalog';
 
 export default function AdminProductEditPage() {
   const params = useParams();
@@ -35,11 +35,11 @@ export default function AdminProductEditPage() {
           setProduct(data.product);
         } else {
           // Fallback to seed data
-          const fallback = seedProducts.find((p) => p.slug === id || p._id === id);
+          const fallback = catalogProducts.find((p) => p.slug === id || p._id === id);
           if (fallback) setProduct(fallback);
         }
       } catch (e) {
-        const fallback = seedProducts.find((p) => p.slug === id || p._id === id);
+        const fallback = catalogProducts.find((p) => p.slug === id || p._id === id);
         if (fallback) setProduct(fallback);
       } finally {
         setLoading(false);

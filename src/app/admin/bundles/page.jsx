@@ -18,11 +18,11 @@ import {
   faWandMagicSparkles as faSparkles,
 } from '@fortawesome/free-solid-svg-icons';
 import AdminHeader from '@/components/admin/AdminHeader';
-import { seedBundles } from '@/lib/seedData';
+import { bundles as catalogBundles } from '@/lib/catalog';
 import { formatPKR } from '@/lib/utils';
 
 export default function AdminBundlesPage() {
-  const [bundles, setBundles] = useState(seedBundles);
+  const [bundles, setBundles] = useState(catalogBundles);
   const [loading, setLoading] = useState(true);
   const [isAdding, setIsAdding] = useState(false);
   const [formData, setFormData] = useState({

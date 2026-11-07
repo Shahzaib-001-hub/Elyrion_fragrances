@@ -11,10 +11,10 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faWandMagicSparkles as faSparkles, faHeart, faTag } from '@fortawesome/free-solid-svg-icons';
 import AdminHeader from '@/components/admin/AdminHeader';
-import { seedMoods } from '@/lib/seedData';
+import { moods as catalogMoods } from '@/lib/catalog';
 
 export default function AdminMoodsPage() {
-  const [moods, setMoods] = useState(seedMoods);
+  const [moods, setMoods] = useState(catalogMoods);
   const [loading, setLoading] = useState(true);
   const [isAdding, setIsAdding] = useState(false);
   const [formData, setFormData] = useState({

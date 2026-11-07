@@ -3,7 +3,7 @@
 /**
  * ============================================================================
  * ELYRION — The Fragrance of Paradise
- * "Scent of the Week" — Featured Fragrance (Light Theme)
+ * "Scent of the Week" — Featured Fragrance
  * ============================================================================
  */
 
@@ -17,6 +17,8 @@ import {
   faBagShopping,
   faCheck,
   faArrowRight,
+  faShieldHalved,
+  faTruckFast,
 } from '@fortawesome/free-solid-svg-icons';
 import OlfactoryPyramid from '@/components/ui/OlfactoryPyramid';
 import SillageGauge from '@/components/ui/SillageGauge';
@@ -36,31 +38,31 @@ export default function ScentOfTheWeek({ product }) {
   };
 
   return (
-    <section className="py-20 bg-[#ECE7DC] border-y border-[#DDD7C8]">
+    <section className="py-24 bg-gradient-to-b from-[#FAF8F5] via-[#F6F1E8] to-[#FAF8F5] border-y border-[#E5E0D5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-2">
+        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
           <div className="flex items-center justify-center gap-2">
-            <span className="px-3.5 py-1 rounded-full text-[10px] font-extrabold bg-elyrion-gold text-white uppercase tracking-widest shadow-md flex items-center gap-1.5">
+            <span className="px-3.5 py-1.5 rounded-full text-[10px] font-black bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white uppercase tracking-widest shadow-sm flex items-center gap-1.5 border border-white/20">
               <FontAwesomeIcon icon={faCrown} className="text-[9px]" />
               EDITORIAL SPOTLIGHT
             </span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-elyrion-dark">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#111827]">
             Scent of the Week
           </h2>
-          <p className="text-xs sm:text-sm text-elyrion-muted font-light">
-            Every week our master perfumer spotlights one exceptional formulation trending among connoisseurs.
+          <p className="text-sm text-[#4B5563] font-light">
+            Every week our master perfumer spotlights one exceptional formulation trending nationwide among connoisseurs.
           </p>
         </div>
 
         {/* Spotlight Showcase Card */}
-        <div className="neu-flat rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10 bg-[#F2EFE8]">
+        <div className="bg-white rounded-3xl border border-[#E5E0D5] overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10 shadow-[0_12px_45px_rgba(0,0,0,0.06)]">
           
           {/* Visual Showcase (Left) */}
           <div className="lg:col-span-5 relative group">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden neu-flat bg-[#EAE5DB]">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-[#E5E0D5] bg-[#FAF8F5]">
               <img
                 src={product.images?.lifestyle || product.images?.studio || product.image}
                 alt={product.name}
@@ -74,8 +76,8 @@ export default function ScentOfTheWeek({ product }) {
                 </span>
               </div>
 
-              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-white/80 shadow-sm">
-                <p className="text-xs font-serif italic text-elyrion-dark font-medium">
+              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-white/95 backdrop-blur-md border border-[#E5E0D5] shadow-sm">
+                <p className="text-xs font-serif italic text-[#111827] font-medium leading-relaxed">
                   "{product.tagline}"
                 </p>
               </div>
@@ -85,22 +87,22 @@ export default function ScentOfTheWeek({ product }) {
           {/* Scent Narrative & Olfactory Breakdown (Right) */}
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-2">
-              <div className="flex items-center justify-between text-xs text-elyrion-muted font-semibold">
+              <div className="flex items-center justify-between text-xs text-[#6B7280] font-semibold">
                 <span className="text-elyrion-goldDark uppercase tracking-widest font-bold">
-                  {product.noteFamily} • Extrait de Parfum
+                  {product.noteFamily} • 35% Extrait Oil
                 </span>
                 <div className="flex items-center gap-1 text-amber-500">
                   <FontAwesomeIcon icon={faStar} className="text-xs" />
-                  <span className="font-bold text-elyrion-dark">{product.rating || 4.9}</span>
-                  <span className="text-elyrion-subtle">({product.numReviews || 89} reviews)</span>
+                  <span className="font-bold text-[#111827]">{product.rating || 4.9}</span>
+                  <span className="text-[#9CA3AF]">({product.numReviews || 89} reviews)</span>
                 </div>
               </div>
 
-              <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-elyrion-dark">
+              <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#111827]">
                 {product.name}
               </h3>
 
-              <p className="text-xs sm:text-sm text-elyrion-muted leading-relaxed font-light">
+              <p className="text-sm text-[#4B5563] leading-relaxed font-light">
                 {product.description}
               </p>
             </div>
@@ -115,15 +117,17 @@ export default function ScentOfTheWeek({ product }) {
             <OlfactoryPyramid notes={product.notes} />
 
             {/* Price & Action */}
-            <div className="pt-4 border-t border-[#E2DDD2] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="pt-5 border-t border-[#E5E0D5] flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="space-y-0.5 text-center sm:text-left">
-                <span className="text-[10px] uppercase tracking-widest text-elyrion-muted font-mono font-bold">Special Weekly Price</span>
+                <span className="text-[10px] uppercase tracking-widest text-[#6B7280] font-mono font-bold">
+                  Special Weekly Offer
+                </span>
                 <div className="flex items-baseline gap-3">
-                  <span className="font-serif text-3xl font-bold text-elyrion-goldDark">
+                  <span className="font-serif text-3xl font-bold text-[#111827]">
                     {formatPrice(product.salePrice || product.price)}
                   </span>
                   {product.salePrice && product.salePrice < product.price && (
-                    <span className="text-sm text-elyrion-subtle line-through">
+                    <span className="text-sm text-[#9CA3AF] line-through">
                       {formatPrice(product.price)}
                     </span>
                   )}
@@ -134,7 +138,7 @@ export default function ScentOfTheWeek({ product }) {
                 <button
                   onClick={handleAddToCart}
                   disabled={added}
-                  className="flex-1 sm:flex-none px-8 py-4 neu-gold-button font-bold text-xs uppercase tracking-widest rounded-xl flex items-center justify-center gap-2"
+                  className="flex-1 sm:flex-none px-8 py-4 neu-gold-button font-bold text-xs uppercase tracking-widest rounded-xl flex items-center justify-center gap-2 shadow-sm"
                 >
                   <FontAwesomeIcon icon={added ? faCheck : faBagShopping} />
                   <span>{added ? 'Added to Bag!' : 'Claim Scent of the Week'}</span>
@@ -142,7 +146,7 @@ export default function ScentOfTheWeek({ product }) {
 
                 <Link
                   href={`/products/${product.slug}`}
-                  className="p-4 neu-button text-elyrion-dark hover:text-elyrion-gold rounded-xl transition-colors"
+                  className="p-4 bg-[#FAF8F5] border border-[#E0DACE] text-[#111827] hover:border-elyrion-gold rounded-xl transition-colors shadow-sm"
                   title="View Full Product Details"
                 >
                   <FontAwesomeIcon icon={faArrowRight} />

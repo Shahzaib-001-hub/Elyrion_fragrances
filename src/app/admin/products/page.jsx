@@ -20,11 +20,11 @@ import {
   faWandMagicSparkles as faSparkles,
 } from '@fortawesome/free-solid-svg-icons';
 import AdminHeader from '@/components/admin/AdminHeader';
-import { seedProducts } from '@/lib/seedData';
+import { products as catalogProducts } from '@/lib/catalog';
 import { formatPKR } from '@/lib/utils';
 
 export default function AdminProductsPage() {
-  const [products, setProducts] = useState(seedProducts);
+  const [products, setProducts] = useState(catalogProducts);
   const [search, setSearch] = useState('');
   const [selectedFamily, setSelectedFamily] = useState('ALL');
   const [loading, setLoading] = useState(true);

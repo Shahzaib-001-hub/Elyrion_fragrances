@@ -3,7 +3,7 @@
 /**
  * ============================================================================
  * ELYRION — The Fragrance of Paradise
- * Shop by Fragrance Notes — Sensory Experience (Light Theme)
+ * Shop by Fragrance Notes — Sensory Experience
  * ============================================================================
  */
 
@@ -34,7 +34,7 @@ const noteFamilies = [
     id: 'fresh',
     name: 'Fresh & Clean',
     heading: 'Fresh. Clean. Effortless.',
-    subheading: 'Crisp Calabrian bergamot, morning ocean sea salt, sparkling Sicilian lemon, and crushed spearmint.',
+    subheading: 'Calabrian bergamot, ocean sea spray, sparkling Sicilian lemon, and crushed spearmint for hot weather projection.',
     notes: ['Citrus', 'Bergamot', 'Lemon', 'Mint', 'Aquatic', 'Green Notes', 'Orange'],
     banner: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1200&auto=format&fit=crop',
   },
@@ -58,17 +58,19 @@ export default function ShopByNotes({ products = [], onQuickView }) {
   );
 
   return (
-    <section id="notes-family" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="notes-family" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-        <span className="text-xs uppercase tracking-[0.25em] text-elyrion-goldDark font-extrabold">
+        <span className="text-xs uppercase tracking-[0.25em] text-elyrion-goldDark font-extrabold flex items-center justify-center gap-2">
+          <span className="w-8 h-[1px] bg-elyrion-gold" />
           Sensory Note Discovery
+          <span className="w-8 h-[1px] bg-elyrion-gold" />
         </span>
-        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-elyrion-dark">
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#111827]">
           Shop by Fragrance Notes
         </h2>
-        <p className="text-xs sm:text-sm text-elyrion-muted leading-relaxed font-light">
-          Instead of just browsing by gender, discover your next signature extrait based on the raw aroma profiles you crave.
+        <p className="text-sm text-[#4B5563] leading-relaxed font-light">
+          Instead of just browsing by gender, discover your signature extrait based on the raw aroma profiles you crave.
         </p>
       </div>
 
@@ -80,8 +82,8 @@ export default function ShopByNotes({ products = [], onQuickView }) {
             onClick={() => setActiveTab(family.name)}
             className={`px-5 sm:px-7 py-3 rounded-2xl text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 font-bold ${
               activeTab === family.name
-                ? 'neu-gold-button text-white shadow-md'
-                : 'neu-button text-elyrion-muted hover:text-elyrion-dark'
+                ? 'neu-gold-button text-white shadow-md -translate-y-0.5'
+                : 'bg-white border border-[#E5E0D5] text-[#111827] hover:border-elyrion-gold/60 shadow-sm'
             }`}
           >
             {family.name}
@@ -90,19 +92,19 @@ export default function ShopByNotes({ products = [], onQuickView }) {
       </div>
 
       {/* Thematic Editorial Banner */}
-      <div className="relative rounded-3xl overflow-hidden neu-flat mb-12 p-8 sm:p-12 flex flex-col justify-end min-h-[260px] sm:min-h-[300px]">
+      <div className="relative rounded-3xl overflow-hidden border border-[#D4AF37]/35 mb-12 p-8 sm:p-12 flex flex-col justify-end min-h-[280px] sm:min-h-[320px] shadow-[0_12px_40px_rgba(0,0,0,0.12)]">
         <img
           src={currentFamily.banner}
           alt={currentFamily.heading}
           className="absolute inset-0 w-full h-full object-cover brightness-[0.45]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
         
         <div className="relative z-10 space-y-3 max-w-2xl text-white">
-          <span className="px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-elyrion-gold text-white">
+          <span className="px-3.5 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-white shadow-sm border border-white/20">
             {currentFamily.name}
           </span>
-          <h3 className="font-serif text-2xl sm:text-4xl font-bold">
+          <h3 className="font-serif text-2xl sm:text-4xl font-bold text-white drop-shadow-sm">
             {currentFamily.heading}
           </h3>
           <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-light">
@@ -114,7 +116,7 @@ export default function ShopByNotes({ products = [], onQuickView }) {
             {currentFamily.notes.map((note) => (
               <span
                 key={note}
-                className="px-3 py-1 rounded-lg text-xs font-semibold bg-white/90 backdrop-blur-md text-elyrion-dark shadow-sm"
+                className="px-3 py-1 rounded-lg text-xs font-semibold bg-white/95 backdrop-blur-md text-[#111827] shadow-sm border border-white/60"
               >
                 #{note}
               </span>

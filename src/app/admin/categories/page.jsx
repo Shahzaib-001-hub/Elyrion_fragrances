@@ -11,11 +11,11 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faLayerGroup, faWandMagicSparkles as faSparkles, faCheck } from '@fortawesome/free-solid-svg-icons';
 import AdminHeader from '@/components/admin/AdminHeader';
-import { seedCategories } from '@/lib/seedData';
+import { categories as catalogCategories } from '@/lib/catalog';
 import { slugify } from '@/lib/utils';
 
 export default function AdminCategoriesPage() {
-  const [categories, setCategories] = useState(seedCategories);
+  const [categories, setCategories] = useState(catalogCategories);
   const [loading, setLoading] = useState(true);
   const [isAdding, setIsAdding] = useState(false);
   const [formData, setFormData] = useState({

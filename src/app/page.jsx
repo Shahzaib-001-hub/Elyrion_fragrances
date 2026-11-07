@@ -11,19 +11,19 @@ import ScentOfTheWeek from '@/components/home/ScentOfTheWeek';
 import CustomerReviews from '@/components/home/CustomerReviews';
 import InstagramFeed from '@/components/home/InstagramFeed';
 import NewsletterVIP from '@/components/home/NewsletterVIP';
-import { seedProducts } from '@/lib/seedData';
+import { products as catalogProducts } from '@/lib/catalog';
 import { generateOrganizationJsonLd, generateFaqJsonLd } from '@/lib/seo';
 
-// Helper function to fetch products server-side or fallback to rich seed data
+// Helper function to fetch products server-side or fallback to rich official catalog
 async function getProducts() {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
     const res = await fetch(`${baseUrl}/api/products`, { cache: 'no-store' });
-    if (!res.ok) return seedProducts;
+    if (!res.ok) return catalogProducts;
     const data = await res.json();
-    return data.products && data.products.length > 0 ? data.products : seedProducts;
+    return data.products && data.products.length > 0 ? data.products : catalogProducts;
   } catch (e) {
-    return seedProducts;
+    return catalogProducts;
   }
 }
 
@@ -89,4 +89,3 @@ export default async function HomePage() {
     </>
   );
 }
-

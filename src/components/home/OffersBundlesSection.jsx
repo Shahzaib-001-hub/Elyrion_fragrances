@@ -3,7 +3,7 @@
 /**
  * ============================================================================
  * ELYRION — The Fragrance of Paradise
- * Offers & Bundles Section — "More Fragrance. Better Value." (Light Theme)
+ * Offers & Bundles Section — "More Fragrance. Better Value."
  * ============================================================================
  */
 
@@ -22,7 +22,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useCart } from '@/context/CartContext';
 import { formatPrice } from '@/lib/utils';
-import { seedBundles, promotionalOffers } from '@/lib/seedData';
+import { bundles as catalogBundles, promotionalOffers } from '@/lib/catalog';
 
 export default function OffersBundlesSection({ products = [] }) {
   const { addToCart } = useCart();
@@ -67,17 +67,19 @@ export default function OffersBundlesSection({ products = [] }) {
   };
 
   return (
-    <section id="offers-section" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+    <section id="offers-section" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
       
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-3">
-        <span className="text-xs uppercase tracking-[0.25em] text-elyrion-goldDark font-extrabold">
+        <span className="text-xs uppercase tracking-[0.25em] text-elyrion-goldDark font-extrabold flex items-center justify-center gap-2">
+          <span className="w-8 h-[1px] bg-elyrion-gold" />
           Special Discounts & Offers
+          <span className="w-8 h-[1px] bg-elyrion-gold" />
         </span>
-        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-elyrion-dark">
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#111827]">
           More Fragrance. Better Value.
         </h2>
-        <p className="text-xs sm:text-sm text-elyrion-muted font-light leading-relaxed">
+        <p className="text-sm text-[#4B5563] font-light leading-relaxed">
           Save up to 30% when you purchase your favorite perfumes together. All bundles include free express delivery across Pakistan, Cash on Delivery, and free 5ml tester bottles.
         </p>
       </div>
@@ -87,23 +89,26 @@ export default function OffersBundlesSection({ products = [] }) {
         {promotionalOffers.map((offer, idx) => (
           <div
             key={offer.title}
-            className="p-7 rounded-3xl neu-flat flex flex-col justify-between space-y-4"
+            className="p-7 rounded-3xl bg-white border border-[#E5E0D5] shadow-sm flex flex-col justify-between space-y-4 hover:border-elyrion-gold/50 transition-colors"
           >
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <span className="px-3 py-1 rounded-full text-[9.5px] font-extrabold bg-elyrion-gold text-white uppercase tracking-wider">
+                <span className="px-3 py-1 rounded-full text-[9.5px] font-black bg-gradient-to-r from-elyrion-gold to-amber-600 text-white uppercase tracking-wider shadow-sm">
                   {offer.badge}
                 </span>
-                <FontAwesomeIcon icon={idx === 0 ? faGift : idx === 1 ? faCrown : faTruckFast} className="text-elyrion-gold text-base" />
+                <FontAwesomeIcon
+                  icon={idx === 0 ? faGift : idx === 1 ? faCrown : faTruckFast}
+                  className="text-elyrion-gold text-base"
+                />
               </div>
-              <h3 className="font-serif text-lg font-bold text-elyrion-dark">
+              <h3 className="font-serif text-lg font-bold text-[#111827]">
                 {offer.title}
               </h3>
-              <p className="text-xs text-elyrion-muted leading-relaxed font-light">
+              <p className="text-xs text-[#6B7280] leading-relaxed font-light">
                 {offer.description}
               </p>
             </div>
-            <div className="pt-3 border-t border-[#E2DDD2]">
+            <div className="pt-3 border-t border-[#E5E0D5]">
               <span className="text-xs font-bold uppercase tracking-wider text-elyrion-goldDark">
                 {offer.subtitle}
               </span>
@@ -114,8 +119,8 @@ export default function OffersBundlesSection({ products = [] }) {
 
       {/* Pre-Curated Bundles Grid */}
       <div className="space-y-6">
-        <div className="flex items-center justify-between border-b border-[#E2DDD2] pb-3">
-          <h3 className="font-serif text-2xl font-bold text-elyrion-dark">
+        <div className="flex items-center justify-between border-b border-[#E5E0D5] pb-3">
+          <h3 className="font-serif text-2xl font-bold text-[#111827]">
             Curated Paradise Sets
           </h3>
           <Link href="/bundles" className="text-xs text-elyrion-goldDark uppercase tracking-wider hover:underline font-bold">
@@ -124,19 +129,19 @@ export default function OffersBundlesSection({ products = [] }) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7 sm:gap-9">
-          {seedBundles.map((bundle) => (
+          {catalogBundles.map((bundle) => (
             <div
               key={bundle.title}
-              className="neu-flat rounded-3xl overflow-hidden flex flex-col justify-between group"
+              className="bg-white rounded-3xl border border-[#E5E0D5] overflow-hidden flex flex-col justify-between group shadow-sm hover:shadow-[0_16px_36px_rgba(197,155,39,0.18)] hover:border-elyrion-gold/60 transition-all duration-300"
             >
-              <div className="relative aspect-[16/10] overflow-hidden bg-[#EAE5DB]">
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#FAF8F5]">
                 <img
                   src={bundle.image}
                   alt={bundle.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[0.7]"
                 />
                 <div className="absolute top-3 left-3">
-                  <span className="px-3 py-1 rounded-full text-[10px] font-extrabold bg-elyrion-gold text-white uppercase tracking-widest shadow-md">
+                  <span className="px-3 py-1 rounded-full text-[10px] font-black bg-gradient-to-r from-elyrion-gold to-amber-600 text-white uppercase tracking-widest shadow-md">
                     {bundle.badge}
                   </span>
                 </div>
@@ -145,28 +150,28 @@ export default function OffersBundlesSection({ products = [] }) {
                 </div>
               </div>
 
-              <div className="p-6 space-y-4 flex-1 flex flex-col justify-between bg-[#F2EFE8]">
+              <div className="p-6 space-y-4 flex-1 flex flex-col justify-between bg-white">
                 <div>
                   <span className="text-[10px] text-elyrion-goldDark uppercase tracking-widest font-extrabold block mb-1">
                     {bundle.category}
                   </span>
-                  <h4 className="font-serif text-xl font-bold text-elyrion-dark">
+                  <h4 className="font-serif text-xl font-bold text-[#111827]">
                     {bundle.title}
                   </h4>
-                  <p className="text-xs text-elyrion-muted mt-2 font-light leading-relaxed">
+                  <p className="text-xs text-[#6B7280] mt-2 font-light leading-relaxed">
                     {bundle.description}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#E2DDD2] space-y-3">
+                <div className="pt-4 border-t border-[#E5E0D5] space-y-3">
                   <div className="flex items-baseline gap-2">
-                    <span className="font-serif text-xl font-bold text-elyrion-goldDark">
+                    <span className="font-serif text-xl font-bold text-[#111827]">
                       {formatPrice(bundle.salePrice)}
                     </span>
-                    <span className="text-xs text-elyrion-subtle line-through">
+                    <span className="text-xs text-[#9CA3AF] line-through">
                       {formatPrice(bundle.price)}
                     </span>
-                    <span className="text-[10.5px] text-emerald-700 font-extrabold ml-auto">
+                    <span className="text-[10.5px] text-emerald-700 font-extrabold ml-auto bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
                       Save {formatPrice(bundle.price - bundle.salePrice)}
                     </span>
                   </div>
@@ -186,7 +191,7 @@ export default function OffersBundlesSection({ products = [] }) {
                         'Set'
                       );
                     }}
-                    className="w-full py-3.5 neu-gold-button font-bold text-xs uppercase tracking-widest rounded-xl flex items-center justify-center gap-2"
+                    className="w-full py-3.5 neu-gold-button font-bold text-xs uppercase tracking-widest rounded-xl flex items-center justify-center gap-2 shadow-sm"
                   >
                     <FontAwesomeIcon icon={faBagShopping} />
                     <span>Add Curated Bundle to Bag</span>
@@ -199,15 +204,15 @@ export default function OffersBundlesSection({ products = [] }) {
       </div>
 
       {/* Interactive Custom Bundle Builder */}
-      <div className="p-6 sm:p-10 rounded-3xl neu-flat space-y-8">
+      <div className="p-6 sm:p-10 rounded-3xl bg-white border border-[#E5E0D5] space-y-8 shadow-[0_12px_45px_rgba(0,0,0,0.06)]">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="px-3.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-elyrion-gold/20 text-elyrion-goldDark border border-elyrion-gold/30">
+          <span className="px-3.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-elyrion-gold/15 text-elyrion-goldDark border border-elyrion-gold/30">
             Interactive Experience
           </span>
-          <h3 className="font-serif text-2xl sm:text-4xl font-black text-elyrion-dark">
+          <h3 className="font-serif text-2xl sm:text-4xl font-bold text-[#111827]">
             Build Your Custom Paradise Set
           </h3>
-          <p className="text-xs sm:text-sm text-elyrion-muted font-light">
+          <p className="text-xs sm:text-sm text-[#4B5563] font-light">
             Select any <strong>2 perfumes for 20% OFF</strong> or select any <strong>3 perfumes and the 3rd bottle is 100% FREE</strong>!
           </p>
         </div>
@@ -224,11 +229,11 @@ export default function OffersBundlesSection({ products = [] }) {
                 onClick={() => toggleSelectForBundle(p)}
                 className={`p-3.5 rounded-2xl text-center transition-all flex flex-col items-center justify-between ${
                   isSelected
-                    ? 'neu-pressed border border-elyrion-gold shadow-sm'
-                    : 'neu-button'
+                    ? 'bg-[#FAF8F5] border-2 border-elyrion-gold shadow-md -translate-y-1'
+                    : 'bg-white border border-[#E5E0D5] hover:border-elyrion-gold/60 shadow-sm'
                 }`}
               >
-                <div className="w-16 h-20 rounded-xl overflow-hidden mb-2 relative neu-pressed">
+                <div className="w-16 h-20 rounded-xl overflow-hidden mb-2 relative bg-[#FAF8F5] border border-[#E5E0D5]">
                   <img
                     src={p.images?.studio || p.image}
                     alt={p.name}
@@ -240,7 +245,7 @@ export default function OffersBundlesSection({ products = [] }) {
                     </div>
                   )}
                 </div>
-                <h5 className="text-xs font-serif font-bold text-elyrion-dark truncate w-full">
+                <h5 className="text-xs font-serif font-bold text-[#111827] truncate w-full">
                   {p.name}
                 </h5>
                 <span className="text-[11px] text-elyrion-goldDark font-bold font-mono mt-1">
@@ -252,27 +257,27 @@ export default function OffersBundlesSection({ products = [] }) {
         </div>
 
         {/* Live Calculation Bar */}
-        <div className="p-6 neu-pressed rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="p-6 bg-[#FAF8F5] border border-[#E5E0D5] rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="space-y-1 text-center md:text-left">
             <span className="text-xs uppercase tracking-widest text-elyrion-goldDark font-extrabold">
               Selected: {bundleItemsCount} of 3 Fragrances
             </span>
             <div className="flex items-baseline gap-3">
-              <span className="font-serif text-2xl sm:text-3xl font-bold text-elyrion-goldDark">
+              <span className="font-serif text-2xl sm:text-3xl font-bold text-[#111827]">
                 {formatPrice(discountedBundlePrice)}
               </span>
               {bundleSavings > 0 && (
                 <>
-                  <span className="text-sm text-elyrion-subtle line-through">
+                  <span className="text-sm text-[#9CA3AF] line-through">
                     {formatPrice(rawBundlePrice)}
                   </span>
-                  <span className="px-2.5 py-0.5 rounded-md text-[10px] font-black bg-emerald-600 text-white">
+                  <span className="px-2.5 py-0.5 rounded-md text-[10px] font-black bg-emerald-700 text-white shadow-sm">
                     YOU SAVE {formatPrice(bundleSavings)}
                   </span>
                 </>
               )}
             </div>
-            <p className="text-[11px] text-elyrion-muted font-medium">
+            <p className="text-[11px] text-[#6B7280] font-medium">
               {bundleItemsCount < 2
                 ? 'Select at least 2 perfumes to unlock bundle discounts.'
                 : bundleItemsCount === 2
@@ -286,8 +291,8 @@ export default function OffersBundlesSection({ products = [] }) {
             disabled={bundleItemsCount < 2 || bundleAdded}
             className={`px-8 py-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-2 ${
               bundleItemsCount >= 2
-                ? 'neu-gold-button shadow-neu-gold'
-                : 'neu-button text-elyrion-subtle cursor-not-allowed opacity-60'
+                ? 'neu-gold-button shadow-md'
+                : 'bg-white border border-[#E0DACE] text-[#9CA3AF] cursor-not-allowed opacity-60'
             }`}
           >
             <FontAwesomeIcon icon={bundleAdded ? faCheck : faBagShopping} />
